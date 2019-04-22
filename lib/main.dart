@@ -1,28 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:novel_shelves_flutter/CustomScrollView.dart';
-import 'package:novel_shelves_flutter/Drag.dart';
-import 'package:novel_shelves_flutter/HeroAnimation.dart';
-import 'package:novel_shelves_flutter/InfiniteListView.dart';
-import 'package:novel_shelves_flutter/InheritedWidget.dart';
-import 'package:novel_shelves_flutter/ScaleAnimation.dart';
-import 'package:novel_shelves_flutter/ScrollController.dart';
-import 'package:novel_shelves_flutter/SingleChildScrollview.dart';
-import 'package:novel_shelves_flutter/StaggerDemo.dart';
-import 'package:novel_shelves_flutter/WillPopScope.dart';
-import 'package:novel_shelves_flutter/column.dart';
-import 'package:novel_shelves_flutter/count.dart';
-import 'package:novel_shelves_flutter/flex.dart';
-import 'package:novel_shelves_flutter/flow.dart';
-import 'package:novel_shelves_flutter/form.dart';
-import 'package:novel_shelves_flutter/login.dart';
-import 'package:novel_shelves_flutter/scaffold.dart';
-import 'package:novel_shelves_flutter/stack.dart';
-import 'package:novel_shelves_flutter/switch-and-checkBox.dart';
-import 'package:novel_shelves_flutter/tap-box-a.dart';
-import 'package:novel_shelves_flutter/tap-box-b.dart';
-import 'package:novel_shelves_flutter/tap-box-c.dart';
-import 'package:novel_shelves_flutter/wrap.dart';
+import 'package:flutter_demo/CustomScrollView.dart';
+import 'package:flutter_demo/Drag.dart';
+import 'package:flutter_demo/GradientButton.dart';
+import 'package:flutter_demo/HeroAnimation.dart';
+import 'package:flutter_demo/InfiniteListView.dart';
+import 'package:flutter_demo/InheritedWidget.dart';
+import 'package:flutter_demo/ScaleAnimation.dart';
+import 'package:flutter_demo/ScrollController.dart';
+import 'package:flutter_demo/SingleChildScrollview.dart';
+import 'package:flutter_demo/StaggerDemo.dart';
+import 'package:flutter_demo/TurnBox.dart';
+import 'package:flutter_demo/WillPopScope.dart';
+import 'package:flutter_demo/column.dart';
+import 'package:flutter_demo/count.dart';
+import 'package:flutter_demo/flex.dart';
+import 'package:flutter_demo/flow.dart';
+import 'package:flutter_demo/form.dart';
+import 'package:flutter_demo/login.dart';
+import 'package:flutter_demo/scaffold.dart';
+import 'package:flutter_demo/stack.dart';
+import 'package:flutter_demo/switch-and-checkBox.dart';
+import 'package:flutter_demo/tap-box-a.dart';
+import 'package:flutter_demo/tap-box-b.dart';
+import 'package:flutter_demo/tap-box-c.dart';
+import 'package:flutter_demo/wrap.dart';
 
 void main() => runApp(MyApp());
 
@@ -420,6 +422,38 @@ class HomeRoute extends StatelessWidget {
                       new MaterialPageRoute(
                           builder: (context) =>
                               new StaggerDemoRoute()));
+                },
+              ),
+              RaisedButton(
+                color: Colors.blue,
+                highlightColor: Colors.blue[700],
+                colorBrightness: Brightness.dark,
+                splashColor: Colors.grey,
+                child: Text('GradientButton'),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0)),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) =>
+                              new GradientButtonRoute()));
+                },
+              ),
+              RaisedButton(
+                color: Colors.blue,
+                highlightColor: Colors.blue[700],
+                colorBrightness: Brightness.dark,
+                splashColor: Colors.grey,
+                child: Text('TurnBox'),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0)),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) =>
+                              new TurnBoxRoute()));
                 },
               ),
             ]));

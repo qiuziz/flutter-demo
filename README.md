@@ -1,4 +1,4 @@
-# novel_shelves_flutter
+# flutter_demo
 
 A new Flutter project.
 
