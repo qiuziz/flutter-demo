@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'dart:io';
+import 'dart:async';
+import 'package:path_provider/path_provider.dart';
 
 class CountWidget extends StatefulWidget {
   const CountWidget({Key key, this.initValue: 0}): super(key: key);
@@ -19,6 +22,11 @@ class _CountWidgetState extends State<CountWidget> {
     super.initState();
     _counter = widget.initValue;
     print(_counter);
+    _readCounter().then((int value) {
+      setState(() {
+        _counter = value;
+      });
+    });
   }
 
   @override
@@ -51,6 +59,28 @@ class _CountWidgetState extends State<CountWidget> {
     print('didChangeDependencies');
   }
 
+  Future<File> _getLocalFile() async {
+    String dir = (await getApplicationDocumentsDirectory()).path;
+    return new File('$dir/counter.txt');
+  }
+
+  Future<Null> _incrementCounter() async {
+    setState(() {
+      _counter++;
+    });
+    await (await _getLocalFile()).writeAsString('$_counter');
+  }
+
+  Future<int> _readCounter() async {
+    try {
+      File file = await _getLocalFile();
+      String contents = await file.readAsString();
+      return int.parse(contents);
+    } on FileSystemException {
+      return 0;
+    }
+  }
+
   @override
   Widget build(BuildContext content) {
      print("build");
@@ -61,7 +91,7 @@ class _CountWidgetState extends State<CountWidget> {
       body: Center(
         child: FlatButton(
           child: Text('$_counter'),
-          onPressed: () => setState(() {_counter++;}),
+          onPressed: () => _incrementCounter(),
         ),
       ),
     );

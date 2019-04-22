@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_demo/CustomPaint.dart';
 import 'package:flutter_demo/CustomScrollView.dart';
 import 'package:flutter_demo/Drag.dart';
 import 'package:flutter_demo/GradientButton.dart';
+import 'package:flutter_demo/GradientCircularProgressIndicator.dart';
 import 'package:flutter_demo/HeroAnimation.dart';
+import 'package:flutter_demo/HttpTest.dart';
 import 'package:flutter_demo/InfiniteListView.dart';
 import 'package:flutter_demo/InheritedWidget.dart';
 import 'package:flutter_demo/ScaleAnimation.dart';
@@ -454,6 +457,54 @@ class HomeRoute extends StatelessWidget {
                       new MaterialPageRoute(
                           builder: (context) =>
                               new TurnBoxRoute()));
+                },
+              ),
+              RaisedButton(
+                color: Colors.blue,
+                highlightColor: Colors.blue[700],
+                colorBrightness: Brightness.dark,
+                splashColor: Colors.grey,
+                child: Text('CustomPaint'),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0)),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) =>
+                              new CustomPaintRoute()));
+                },
+              ),
+              RaisedButton(
+                color: Colors.blue,
+                highlightColor: Colors.blue[700],
+                colorBrightness: Brightness.dark,
+                splashColor: Colors.grey,
+                child: Text('GradientCircularProgressIndicator'),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0)),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) =>
+                              new GradientCircularProgressRoute()));
+                },
+              ),
+              RaisedButton(
+                color: Colors.blue,
+                highlightColor: Colors.blue[700],
+                colorBrightness: Brightness.dark,
+                splashColor: Colors.grey,
+                child: Text('HttpTest'),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0)),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) =>
+                              new HttpTestRoute()));
                 },
               ),
             ]));
